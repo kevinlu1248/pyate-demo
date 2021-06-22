@@ -1,25 +1,47 @@
 {
-  "name": "pyate-demo",
-  "version": "1.0.0",
-  "description": "Demonstrate PyATE in the browser",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kevinlu1248/pyate-demo.git"
-  },
-  "keywords": [
-    "python"
-  ],
-  "author": "Kevin Lu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kevinlu1248/pyate-demo/issues"
-  },
-  "homepage": "https://github.com/kevinlu1248/pyate-demo#readme",
-  "dependencies": {
-    "react": "^17.0.2"
-  }
+    "name": "pyate-demo",
+    "version": "1.0.0",
+    "description": "Demonstrate PyATE in the browser",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "yarn run webpack serve --open",
+        "build": "yarn run webpack",
+        "format": "yarn run prettier --write src"
+    },
+    "repository": "git+https://github.com/kevinlu1248/pyate-demo.git",
+    "keywords": [
+        "python"
+    ],
+    "author": "Kevin Lu",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kevinlu1248/pyate-demo/issues"
+    },
+    "homepage": "https://github.com/kevinlu1248/pyate-demo#readme",
+    "dependencies": {
+        "@material-ui/core": "^4.11.4",
+        "prettier": "^2.3.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "webpack": "^5.40.0"
+    },
+    "private": false,
+    "devDependencies": {
+        "@babel/preset-react": "^7.14.5",
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
+    },
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-react"
+            ]
+        ]
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true
+    }
 }
