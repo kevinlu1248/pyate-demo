@@ -5,8 +5,9 @@
  * @description : index
  */
 
-export { default as Algopicker } from './algopicker.jsx'
-export { default as Footer } from './footer.jsx'
-export { default as Input } from './input.jsx'
-export { default as Intro } from './intro.jsx'
-export { default as Output } from './output.jsx'
+export { default as Algopicker } from './algopicker.jsx';
+export { default as Demonstrater } from './demonstrater.jsx';
+export { default as Footer } from './footer.jsx';
+export { default as Input } from './input.jsx';
+export { default as Intro } from './intro.jsx';
+export { default as Output } from './output.jsx';

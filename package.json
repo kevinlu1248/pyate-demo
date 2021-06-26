@@ -5,9 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "yarn run webpack serve --open",
+        "start": "yarn run webpack serve --open & yarn run webpack --watch",
         "build": "yarn run webpack",
-        "format": "yarn run prettier --write src"
+        "format": "yarn run prettier --write src",
+        "prettier-watch": "npx onchange '**/*' -- npx prettier --write --ignore-unknown {{changed}}"
     },
     "repository": "git+https://github.com/kevinlu1248/pyate-demo.git",
     "keywords": [
@@ -21,6 +22,7 @@
     "homepage": "https://github.com/kevinlu1248/pyate-demo#readme",
     "dependencies": {
         "@material-ui/core": "^4.11.4",
+        "@material-ui/icons": "^4.11.2",
         "prettier": "^2.3.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -41,7 +43,7 @@
     },
     "prettier": {
         "tabWidth": 4,
-        "semi": false,
+        "semi": true,
         "singleQuote": true
     }
 }
