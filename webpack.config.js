@@ -12,7 +12,7 @@ module.exports = {
     entry: './src/index.jsx',
     output: {
         filename: 'index.bundle.js',
-        path: path.resolve(__dirname, './build/static/'),
+        path: path.resolve(__dirname, './server/build/static/'),
     },
     module: {
         rules: [
@@ -29,7 +29,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
     devServer: {
-        contentBase: './build',
+        contentBase: './server/build',
         publicPath: '/static/',
         port: 8000,
     },
