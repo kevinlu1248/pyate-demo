@@ -5,14 +5,14 @@
  * @description : webpack.config
  */
 
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-    mode: "development",
-    entry: "./src/index.jsx",
+    mode: 'development',
+    entry: './src/index.jsx',
     output: {
-        filename: "index.bundle.js",
-        path: path.resolve(__dirname, "./server/build/static/")
+        filename: 'index.bundle.js',
+        path: path.resolve(__dirname, './server/build/static/'),
     },
     module: {
         rules: [
@@ -20,18 +20,17 @@ module.exports = {
                 test: /\.(js|jsx|tx|tsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
-                }
-            }
-        ]
+                    loader: 'babel-loader',
+                },
+            },
+        ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js", ".jsx"]
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
     },
     devServer: {
         contentBase: './server/build',
         publicPath: '/static/',
-        port: 8000
-    }
+        port: 8000,
+    },
 };
-
