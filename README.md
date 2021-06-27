@@ -6,5 +6,5 @@ When typing in a term, the list of predicted terms as well as their "termhoods" 
 
 ## Tools used
 - React, using Babel/Webpack for transpilation and Yarn for package management
-- Flask as backend; I chose Python so that I easily incorporate it with PyATE
+- Flask as backend running on the platform Heroku; I chose Python so that I easily incorporate it with PyATE
 - PyATE, a term extraction Python package, which runs on spaCy for POS tagging
