@@ -5,12 +5,13 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import Link from '@material-ui/core/Link';
-import { spacing } from '@material-ui/system';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 
 export default (props) => (
     <>
         <Typography variant="h5">Your algorithm:</Typography>
+        <Box mb={1}/>
         <FormControl component="fieldset">
             <RadioGroup
                 row
@@ -46,8 +47,9 @@ export default (props) => (
                 />
             </RadioGroup>
         </FormControl>
-        <Typography variant="subtitle1" mb={10}>
-            <Link href="#">Advanced options</Link>
+        <Typography variant="subtitle1">
+            <Button color="primary" disabled>Advanced options</Button>
         </Typography>
+        <Box mb={3}/>
     </>
 );

@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import logging
 from logging import Formatter, FileHandler
 import pyate
-import json
 
 app = Flask(__name__, template_folder="build", static_folder="build/static")
 
