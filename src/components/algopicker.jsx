@@ -22,7 +22,6 @@ export default (props) => (
         <Box mb={1}/>
         <FormControl component="fieldset">
             <RadioGroup
-                row
                 aria-label="position"
                 name="position"
                 defaultValue="combo_basic"

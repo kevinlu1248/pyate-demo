@@ -22,7 +22,7 @@ export default (props) => (
             borderRadius={4} 
             borderColor="#c4c4c4"
         >
-            <TableContainer style={{maxHeight: 300}}>
+            <TableContainer style={{height: 500}}>
                 <Table aria-label="simple table" size="small" stickyHeader>
                     <TableHead>
                         <TableRow>

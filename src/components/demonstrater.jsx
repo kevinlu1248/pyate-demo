@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 import Input from './input.jsx';
 import Algopicker from './algopicker.jsx';
@@ -68,9 +69,17 @@ export default (props) => {
 
     return (
         <>
-            <Input handleInputChange={handleInputChange} />
-            <Algopicker handleAlgoChange={handleAlgoChange} />
-            <Output data={data} loadingCounter={loadingCounter}/>
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={4}>
+                    <Input handleInputChange={handleInputChange} />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Algopicker handleAlgoChange={handleAlgoChange} />
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Output data={data} loadingCounter={loadingCounter}/>
+                </Grid>
+            </Grid>
         </>
     );
 };

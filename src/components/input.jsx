@@ -3,8 +3,14 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 
-export default (props) => (
-    <>
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+
+export default (props) => {
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up('md'));
+
+    return (<>
         <Typography variant="h5" gutterBottom>
             Your text:
         </Typography>
@@ -13,7 +19,7 @@ export default (props) => (
             id="outlined-multiline-static"
             label="Your text to be analyzed by PyATE"
             multiline
-            rows={10}
+            rows={matches ? 25 : 10}
             defaultValue="My name is ComboBasic. I am a term extraction algorithm."
             variant="outlined"
             onChange={props.handleInputChange}
@@ -21,7 +27,7 @@ export default (props) => (
             fullWidth
         />
         <Box
-            mb={3}
+            mb={5}
         />
-    </>
-);
+    </>);
+};
