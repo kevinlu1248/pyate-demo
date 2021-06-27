@@ -54,7 +54,7 @@ export default (props) => (
                     </TableBody>
                 </Table>
             </TableContainer>
-            {props.loadingCounter > 0 &&
+            {(props.loadingCounter > 0) &&
                 <LinearProgress />
             }
         </Box>

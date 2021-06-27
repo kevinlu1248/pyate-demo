@@ -2,9 +2,19 @@ from flask import Flask, render_template, request
 import logging
 from logging import Formatter, FileHandler
 import pyate
+from pyate import TermExtraction
 
 app = Flask(__name__, template_folder="build", static_folder="build/static")
 
+# te = TermExtraction(TermExtraction.get_general_domain())
+
+MAPPING_NAME_TO_FUNCTION = {
+    "c_values": lambda s, kwargs: pyate.c_values(s, **kwargs),
+    "combo_basic": lambda s, kwargs: pyate.combo_basic(s, **kwargs),
+    "basic": lambda s, kwargs: pyate.basic(s, **kwargs),
+    "term_extractor": lambda s, kwargs: pyate.term_extractor(s, **kwargs),
+    "weirdness": lambda s, kwargs: pyate.weirdness(s, **kwargs),
+}
 
 @app.route("/")
 def home():

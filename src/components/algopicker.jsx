@@ -8,6 +8,14 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 
+const ALGOS = [
+    ["combo_basic", "ComboBasic"],
+    ["basic", "Basic"],
+    ["c_values", "C-Values"],
+    ["term_extractor", "TermExtractor"],
+    ["weirdness", "Weirdness"]
+]
+
 export default (props) => (
     <>
         <Typography variant="h5">Your algorithm:</Typography>
@@ -20,31 +28,13 @@ export default (props) => (
                 defaultValue="combo_basic"
                 onChange={props.handleAlgoChange}
             >
-                <FormControlLabel
-                    value="combo_basic"
-                    control={<Radio color="primary" />}
-                    label="ComboBasic"
-                />
-                <FormControlLabel
-                    value="basic"
-                    control={<Radio color="primary" />}
-                    label="Basic"
-                />
-                <FormControlLabel
-                    value="cvalue"
-                    control={<Radio color="primary" />}
-                    label="C-Value"
-                />
-                <FormControlLabel
-                    value="term_extractor"
-                    control={<Radio color="primary" />}
-                    label="Term Extractor"
-                />
-                <FormControlLabel
-                    value="weirdness"
-                    control={<Radio color="primary" />}
-                    label="Weirdness"
-                />
+                {ALGOS.map(row => 
+                    <FormControlLabel
+                        value={row[0]}
+                        control={<Radio color="primary" />}
+                        label={row[1]}
+                    />
+                )}
             </RadioGroup>
         </FormControl>
         <Typography variant="subtitle1">

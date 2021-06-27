@@ -17,9 +17,18 @@ export default (props) => {
         ['term extraction algorithm', 1.299],
     ]);
     const [loadingCounter, setLoadingCounter] = useState(0); // done loading when counter is at 0, adds one for every request sent and removes one for every request not sent
+    const [timeout, setTimeoutState] = useState(0);
 
     function renderNewOutput(algo, text) {
-        setLoadingCounter(loadingCounter + 1);
+        setLoadingCounter(1);
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        setTimeoutState(setTimeout(() => {renderNewOutputRaw(algo, text)}, 800));
+    }
+
+    function renderNewOutputRaw(algo, text) {
+        console.log(`Sent! Current loadingCounter=${loadingCounter}`);
         fetch('/ate', {
             method: 'POST',
             headers: {
@@ -37,7 +46,8 @@ export default (props) => {
                         alert(errorMessage);
                     }
                     setData(response);
-                    setLoadingCounter(loadingCounter - 1);
+                    setLoadingCounter(0);
+                    console.log(`Received! loadingCounter=${loadingCounter}`)
                 })
             )
             .then((data) => {})
@@ -46,14 +56,14 @@ export default (props) => {
 
     function handleInputChange(event) {
         let newText = event.target.value;
-        renderNewOutput(algo, newText);
         setText(newText);
+        renderNewOutput(algo, newText);
     }
 
     function handleAlgoChange(event) {
         let newAlgo = event.target.value;
-        renderNewOutput(newAlgo, text);
         setAlgo(newAlgo);
+        renderNewOutput(newAlgo, text);
     }
 
     return (
