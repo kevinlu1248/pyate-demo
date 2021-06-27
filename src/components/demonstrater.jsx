@@ -74,7 +74,10 @@ export default (props) => {
                     <Input handleInputChange={handleInputChange} />
                 </Grid>
                 <Grid item xs={12} md={4}>
-                    <Algopicker handleAlgoChange={handleAlgoChange} />
+                    <Algopicker 
+                        handleAlgoChange={handleAlgoChange}
+                        algo={algo}
+                    />
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Output data={data} loadingCounter={loadingCounter}/>

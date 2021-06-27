@@ -9,7 +9,7 @@ app = Flask(__name__, template_folder="build", static_folder="build/static")
 # te = TermExtraction(TermExtraction.get_general_domain())
 
 MAPPING_NAME_TO_FUNCTION = {
-    "c_values": lambda s, kwargs: pyate.c_values(s, **kwargs),
+    "cvalues": lambda s, kwargs: pyate.cvalues(s, **kwargs),
     "combo_basic": lambda s, kwargs: pyate.combo_basic(s, **kwargs),
     "basic": lambda s, kwargs: pyate.basic(s, **kwargs),
     "term_extractor": lambda s, kwargs: pyate.term_extractor(s, **kwargs),
