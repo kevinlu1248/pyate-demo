@@ -1,13 +1,16 @@
 import React from 'react';
+
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import Alert from '@material-ui/lab/Alert';
+
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
 
 const ALGOS = [
     ["combo_basic", "ComboBasic", 
@@ -28,11 +31,15 @@ const ALGOS = [
     ["term_extractor", "TermExtractor", 
         <>
             The TermExtractor algorithm was designed by <Link href="https://link.springer.com/chapter/10.1007/978-1-84628-858-6_32">Sclano and Velardi (2007)</Link>. <Link href="https://kevinlu1248.github.io/pyate/algorithms.html#cvalues">More info</Link>
+            <br/> <br/>
+            <Alert severity="warning">The TermExtractor algorithm may take up a minute to run since it depends on counting terms from a larger general domain. If it takes even longer, try restarting the page (Heroku free trial's memory limit may have been exceeded).</Alert>
         </>
     ],
     ["weirdness", "Weirdness", 
         <>
             The Weirdness algorithm was designed by <Link href="http://ceur-ws.org/Vol-1031/paper3.pdf">Fedorenko, Astrakhantsev and Turdakov (2013)</Link>, which calculates the termhood of a candidate <i>t</i> by taking the quotient of the frequency of <i>t</i> in a technical corpus (such as in a medical journal) and the frequency in a general corpus (such as random Wikipedia pages). <Link href="https://kevinlu1248.github.io/pyate/algorithms.html#weirdness">More info</Link>
+            <br/> <br/>
+            <Alert severity="warning">The Weirdness algorithm may take up a minute to run since it depends on counting terms from a larger general domain. If it takes even longer, try restarting the page (Heroku free trial's memory limit may have been exceeded).</Alert>
         </>
     ]
 ]
