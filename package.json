@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "yarn run webpack serve --open & yarn run webpack --watch",
-        "build": "yarn run webpack build --mode=production",
+        "start": "yarn run webpack serve --open --config webpack.dev.js & yarn run webpack --watch webpack.dev.js",
+        "build": "yarn run webpack build --mode=production --config webpack.prod.js",
         "format": "yarn run prettier --write src",
         "prettier-watch": "npx onchange '**/*' -- npx prettier --write --ignore-unknown {{changed}}"
     },
