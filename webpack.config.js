@@ -9,7 +9,7 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.jsx',
+    entry: './src/index.tsx',
     output: {
         filename: 'index.bundle.js',
         path: path.resolve(__dirname, './server/build/static/'),
@@ -18,10 +18,15 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx|tx|tsx)$/,
-                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                 },
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.(ts|tsx)?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
         ],
     },

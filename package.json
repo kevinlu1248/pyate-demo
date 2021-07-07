@@ -24,9 +24,13 @@
         "@material-ui/core": "^4.11.4",
         "@material-ui/icons": "^4.11.2",
         "@material-ui/lab": "^4.0.0-alpha.58",
+        "@types/react": "^17.0.13",
+        "@types/react-dom": "^17.0.8",
         "prettier": "^2.3.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
+        "ts-loader": "^9.2.3",
+        "typescript": "^4.3.5",
         "webpack": "^5.40.0"
     },
     "private": false,

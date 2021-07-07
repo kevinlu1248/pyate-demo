@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Link from '@material-ui/core/Link';
@@ -8,7 +8,9 @@ import LinkIcon from '@material-ui/icons/Link';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import DescriptionIcon from '@material-ui/icons/Description';
 
-export default (props) => (
+interface Props {}
+
+export default (props: Props) => (
     <>
         <div>
             <Box mx="auto" width="fit-content">
@@ -28,18 +30,18 @@ export default (props) => (
             </Box>
         </div>
         <Divider variant="middle" />
-        <div> 
+        <div>
             <Box mx="auto" width="fit-content" mt={1.5}>
-                <Typography variant="caption" align="center" justify="center">
-                    If something is wrong, feel free to throw a Github issue or email me
-                    at&nbsp;
+                <Typography variant="caption" align="center">
+                    If something is wrong, feel free to throw a Github issue or
+                    email me at&nbsp;
                     <Link href="mailto:kevinlu1248@gmail.com">
                         kevinlu1248@gmail.com
                     </Link>
                 </Typography>
             </Box>
             <Box mx="auto" width="fit-content">
-                <Typography variant="caption" align="center" justify="center">
+                <Typography variant="caption" align="center">
                     Made by Kevin Lu | Copyright (C) 2021
                 </Typography>
             </Box>
