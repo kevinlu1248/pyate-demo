@@ -6,13 +6,15 @@
  */
 
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
     output: {
-        filename: 'index.bundle.js',
-        path: path.resolve(__dirname, './server/build/static/'),
+        // filename: './static/index.bundle.js',
+        filename: './static/[name].[contenthash].js',
+        path: path.resolve(__dirname, './server/build/'),
     },
     module: {
         rules: [
@@ -38,4 +40,27 @@ module.exports = {
         publicPath: '/static/',
         port: 8000,
     },
+    optimization: {
+        splitChunks: {},
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Automated Term Extraction Demonstrater | Web app for demonstrating PyATE's algorithms",
+            inject: 'body',
+            templateContent: ({ htmlWebpackPlugin }) => `
+            <html>
+              <head>
+                <title>
+                    Automated Term Extraction Demonstrater | Web app for demonstrating
+                    PyATE's algorithms
+                </title>
+                ${htmlWebpackPlugin.tags.headTags}
+              </head>
+              <body>
+                <div id="root"></div>
+              </body>
+            </html>
+          `,
+        }),
+    ],
 };

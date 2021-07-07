@@ -1,4 +1,4 @@
-/*! For license information please see index.bundle.js.LICENSE.txt */
+/*! For license information please see main.b72bfeebfbfddab88d8a.js.LICENSE.txt */
 (() => {
     var e = {
             676: (e, t, n) => {

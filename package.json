@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "yarn run webpack serve --open & yarn run webpack --watch",
-        "build": "yarn run webpack",
+        "build": "yarn run webpack build --mode=production",
         "format": "yarn run prettier --write src",
         "prettier-watch": "npx onchange '**/*' -- npx prettier --write --ignore-unknown {{changed}}"
     },
@@ -36,6 +36,7 @@
     "private": false,
     "devDependencies": {
         "@babel/preset-react": "^7.14.5",
+        "html-webpack-plugin": "^5.3.2",
         "webpack-cli": "^4.7.2",
         "webpack-dev-server": "^3.11.2"
     },
