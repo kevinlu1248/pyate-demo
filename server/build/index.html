@@ -4,12 +4,2365 @@
             Automated Term Extraction Demonstrater | Web app for demonstrating
             PyATE's algorithms
         </title>
+        <style data-jss="" data-meta="MuiTypography">
+            .MuiTypography-root {
+                margin: 0;
+            }
+            .MuiTypography-body2 {
+                font-size: 0.875rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.43;
+                letter-spacing: 0.01071em;
+            }
+            .MuiTypography-body1 {
+                font-size: 1rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.5;
+                letter-spacing: 0.00938em;
+            }
+            .MuiTypography-caption {
+                font-size: 0.75rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.66;
+                letter-spacing: 0.03333em;
+            }
+            .MuiTypography-button {
+                font-size: 0.875rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 500;
+                line-height: 1.75;
+                letter-spacing: 0.02857em;
+                text-transform: uppercase;
+            }
+            .MuiTypography-h1 {
+                font-size: 6rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 300;
+                line-height: 1.167;
+                letter-spacing: -0.01562em;
+            }
+            .MuiTypography-h2 {
+                font-size: 3.75rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 300;
+                line-height: 1.2;
+                letter-spacing: -0.00833em;
+            }
+            .MuiTypography-h3 {
+                font-size: 3rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.167;
+                letter-spacing: 0em;
+            }
+            .MuiTypography-h4 {
+                font-size: 2.125rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.235;
+                letter-spacing: 0.00735em;
+            }
+            .MuiTypography-h5 {
+                font-size: 1.5rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.334;
+                letter-spacing: 0em;
+            }
+            .MuiTypography-h6 {
+                font-size: 1.25rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 500;
+                line-height: 1.6;
+                letter-spacing: 0.0075em;
+            }
+            .MuiTypography-subtitle1 {
+                font-size: 1rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.75;
+                letter-spacing: 0.00938em;
+            }
+            .MuiTypography-subtitle2 {
+                font-size: 0.875rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 500;
+                line-height: 1.57;
+                letter-spacing: 0.00714em;
+            }
+            .MuiTypography-overline {
+                font-size: 0.75rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 2.66;
+                letter-spacing: 0.08333em;
+                text-transform: uppercase;
+            }
+            .MuiTypography-srOnly {
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+            }
+            .MuiTypography-alignLeft {
+                text-align: left;
+            }
+            .MuiTypography-alignCenter {
+                text-align: center;
+            }
+            .MuiTypography-alignRight {
+                text-align: right;
+            }
+            .MuiTypography-alignJustify {
+                text-align: justify;
+            }
+            .MuiTypography-noWrap {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .MuiTypography-gutterBottom {
+                margin-bottom: 0.35em;
+            }
+            .MuiTypography-paragraph {
+                margin-bottom: 16px;
+            }
+            .MuiTypography-colorInherit {
+                color: inherit;
+            }
+            .MuiTypography-colorPrimary {
+                color: #3f51b5;
+            }
+            .MuiTypography-colorSecondary {
+                color: #f50057;
+            }
+            .MuiTypography-colorTextPrimary {
+                color: rgba(0, 0, 0, 0.87);
+            }
+            .MuiTypography-colorTextSecondary {
+                color: rgba(0, 0, 0, 0.54);
+            }
+            .MuiTypography-colorError {
+                color: #f44336;
+            }
+            .MuiTypography-displayInline {
+                display: inline;
+            }
+            .MuiTypography-displayBlock {
+                display: block;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiLink">
+            .MuiLink-underlineNone {
+                text-decoration: none;
+            }
+            .MuiLink-underlineHover {
+                text-decoration: none;
+            }
+            .MuiLink-underlineHover:hover {
+                text-decoration: underline;
+            }
+            .MuiLink-underlineAlways {
+                text-decoration: underline;
+            }
+            .MuiLink-button {
+                border: 0;
+                cursor: pointer;
+                margin: 0;
+                outline: 0;
+                padding: 0;
+                position: relative;
+                user-select: none;
+                border-radius: 0;
+                vertical-align: middle;
+                -moz-appearance: none;
+                background-color: transparent;
+                -webkit-appearance: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .MuiLink-button::-moz-focus-inner {
+                border-style: none;
+            }
+            .MuiLink-button.Mui-focusVisible {
+                outline: auto;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiBox"></style>
+        <style data-jss="" data-meta="MuiGrid">
+            .MuiGrid-container {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+            }
+            .MuiGrid-item {
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .MuiGrid-zeroMinWidth {
+                min-width: 0;
+            }
+            .MuiGrid-direction-xs-column {
+                flex-direction: column;
+            }
+            .MuiGrid-direction-xs-column-reverse {
+                flex-direction: column-reverse;
+            }
+            .MuiGrid-direction-xs-row-reverse {
+                flex-direction: row-reverse;
+            }
+            .MuiGrid-wrap-xs-nowrap {
+                flex-wrap: nowrap;
+            }
+            .MuiGrid-wrap-xs-wrap-reverse {
+                flex-wrap: wrap-reverse;
+            }
+            .MuiGrid-align-items-xs-center {
+                align-items: center;
+            }
+            .MuiGrid-align-items-xs-flex-start {
+                align-items: flex-start;
+            }
+            .MuiGrid-align-items-xs-flex-end {
+                align-items: flex-end;
+            }
+            .MuiGrid-align-items-xs-baseline {
+                align-items: baseline;
+            }
+            .MuiGrid-align-content-xs-center {
+                align-content: center;
+            }
+            .MuiGrid-align-content-xs-flex-start {
+                align-content: flex-start;
+            }
+            .MuiGrid-align-content-xs-flex-end {
+                align-content: flex-end;
+            }
+            .MuiGrid-align-content-xs-space-between {
+                align-content: space-between;
+            }
+            .MuiGrid-align-content-xs-space-around {
+                align-content: space-around;
+            }
+            .MuiGrid-justify-xs-center {
+                justify-content: center;
+            }
+            .MuiGrid-justify-xs-flex-end {
+                justify-content: flex-end;
+            }
+            .MuiGrid-justify-xs-space-between {
+                justify-content: space-between;
+            }
+            .MuiGrid-justify-xs-space-around {
+                justify-content: space-around;
+            }
+            .MuiGrid-justify-xs-space-evenly {
+                justify-content: space-evenly;
+            }
+            .MuiGrid-spacing-xs-1 {
+                width: calc(100% + 8px);
+                margin: -4px;
+            }
+            .MuiGrid-spacing-xs-1 > .MuiGrid-item {
+                padding: 4px;
+            }
+            .MuiGrid-spacing-xs-2 {
+                width: calc(100% + 16px);
+                margin: -8px;
+            }
+            .MuiGrid-spacing-xs-2 > .MuiGrid-item {
+                padding: 8px;
+            }
+            .MuiGrid-spacing-xs-3 {
+                width: calc(100% + 24px);
+                margin: -12px;
+            }
+            .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+                padding: 12px;
+            }
+            .MuiGrid-spacing-xs-4 {
+                width: calc(100% + 32px);
+                margin: -16px;
+            }
+            .MuiGrid-spacing-xs-4 > .MuiGrid-item {
+                padding: 16px;
+            }
+            .MuiGrid-spacing-xs-5 {
+                width: calc(100% + 40px);
+                margin: -20px;
+            }
+            .MuiGrid-spacing-xs-5 > .MuiGrid-item {
+                padding: 20px;
+            }
+            .MuiGrid-spacing-xs-6 {
+                width: calc(100% + 48px);
+                margin: -24px;
+            }
+            .MuiGrid-spacing-xs-6 > .MuiGrid-item {
+                padding: 24px;
+            }
+            .MuiGrid-spacing-xs-7 {
+                width: calc(100% + 56px);
+                margin: -28px;
+            }
+            .MuiGrid-spacing-xs-7 > .MuiGrid-item {
+                padding: 28px;
+            }
+            .MuiGrid-spacing-xs-8 {
+                width: calc(100% + 64px);
+                margin: -32px;
+            }
+            .MuiGrid-spacing-xs-8 > .MuiGrid-item {
+                padding: 32px;
+            }
+            .MuiGrid-spacing-xs-9 {
+                width: calc(100% + 72px);
+                margin: -36px;
+            }
+            .MuiGrid-spacing-xs-9 > .MuiGrid-item {
+                padding: 36px;
+            }
+            .MuiGrid-spacing-xs-10 {
+                width: calc(100% + 80px);
+                margin: -40px;
+            }
+            .MuiGrid-spacing-xs-10 > .MuiGrid-item {
+                padding: 40px;
+            }
+            .MuiGrid-grid-xs-auto {
+                flex-grow: 0;
+                max-width: none;
+                flex-basis: auto;
+            }
+            .MuiGrid-grid-xs-true {
+                flex-grow: 1;
+                max-width: 100%;
+                flex-basis: 0;
+            }
+            .MuiGrid-grid-xs-1 {
+                flex-grow: 0;
+                max-width: 8.333333%;
+                flex-basis: 8.333333%;
+            }
+            .MuiGrid-grid-xs-2 {
+                flex-grow: 0;
+                max-width: 16.666667%;
+                flex-basis: 16.666667%;
+            }
+            .MuiGrid-grid-xs-3 {
+                flex-grow: 0;
+                max-width: 25%;
+                flex-basis: 25%;
+            }
+            .MuiGrid-grid-xs-4 {
+                flex-grow: 0;
+                max-width: 33.333333%;
+                flex-basis: 33.333333%;
+            }
+            .MuiGrid-grid-xs-5 {
+                flex-grow: 0;
+                max-width: 41.666667%;
+                flex-basis: 41.666667%;
+            }
+            .MuiGrid-grid-xs-6 {
+                flex-grow: 0;
+                max-width: 50%;
+                flex-basis: 50%;
+            }
+            .MuiGrid-grid-xs-7 {
+                flex-grow: 0;
+                max-width: 58.333333%;
+                flex-basis: 58.333333%;
+            }
+            .MuiGrid-grid-xs-8 {
+                flex-grow: 0;
+                max-width: 66.666667%;
+                flex-basis: 66.666667%;
+            }
+            .MuiGrid-grid-xs-9 {
+                flex-grow: 0;
+                max-width: 75%;
+                flex-basis: 75%;
+            }
+            .MuiGrid-grid-xs-10 {
+                flex-grow: 0;
+                max-width: 83.333333%;
+                flex-basis: 83.333333%;
+            }
+            .MuiGrid-grid-xs-11 {
+                flex-grow: 0;
+                max-width: 91.666667%;
+                flex-basis: 91.666667%;
+            }
+            .MuiGrid-grid-xs-12 {
+                flex-grow: 0;
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+            @media (min-width: 600px) {
+                .MuiGrid-grid-sm-auto {
+                    flex-grow: 0;
+                    max-width: none;
+                    flex-basis: auto;
+                }
+                .MuiGrid-grid-sm-true {
+                    flex-grow: 1;
+                    max-width: 100%;
+                    flex-basis: 0;
+                }
+                .MuiGrid-grid-sm-1 {
+                    flex-grow: 0;
+                    max-width: 8.333333%;
+                    flex-basis: 8.333333%;
+                }
+                .MuiGrid-grid-sm-2 {
+                    flex-grow: 0;
+                    max-width: 16.666667%;
+                    flex-basis: 16.666667%;
+                }
+                .MuiGrid-grid-sm-3 {
+                    flex-grow: 0;
+                    max-width: 25%;
+                    flex-basis: 25%;
+                }
+                .MuiGrid-grid-sm-4 {
+                    flex-grow: 0;
+                    max-width: 33.333333%;
+                    flex-basis: 33.333333%;
+                }
+                .MuiGrid-grid-sm-5 {
+                    flex-grow: 0;
+                    max-width: 41.666667%;
+                    flex-basis: 41.666667%;
+                }
+                .MuiGrid-grid-sm-6 {
+                    flex-grow: 0;
+                    max-width: 50%;
+                    flex-basis: 50%;
+                }
+                .MuiGrid-grid-sm-7 {
+                    flex-grow: 0;
+                    max-width: 58.333333%;
+                    flex-basis: 58.333333%;
+                }
+                .MuiGrid-grid-sm-8 {
+                    flex-grow: 0;
+                    max-width: 66.666667%;
+                    flex-basis: 66.666667%;
+                }
+                .MuiGrid-grid-sm-9 {
+                    flex-grow: 0;
+                    max-width: 75%;
+                    flex-basis: 75%;
+                }
+                .MuiGrid-grid-sm-10 {
+                    flex-grow: 0;
+                    max-width: 83.333333%;
+                    flex-basis: 83.333333%;
+                }
+                .MuiGrid-grid-sm-11 {
+                    flex-grow: 0;
+                    max-width: 91.666667%;
+                    flex-basis: 91.666667%;
+                }
+                .MuiGrid-grid-sm-12 {
+                    flex-grow: 0;
+                    max-width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+            @media (min-width: 960px) {
+                .MuiGrid-grid-md-auto {
+                    flex-grow: 0;
+                    max-width: none;
+                    flex-basis: auto;
+                }
+                .MuiGrid-grid-md-true {
+                    flex-grow: 1;
+                    max-width: 100%;
+                    flex-basis: 0;
+                }
+                .MuiGrid-grid-md-1 {
+                    flex-grow: 0;
+                    max-width: 8.333333%;
+                    flex-basis: 8.333333%;
+                }
+                .MuiGrid-grid-md-2 {
+                    flex-grow: 0;
+                    max-width: 16.666667%;
+                    flex-basis: 16.666667%;
+                }
+                .MuiGrid-grid-md-3 {
+                    flex-grow: 0;
+                    max-width: 25%;
+                    flex-basis: 25%;
+                }
+                .MuiGrid-grid-md-4 {
+                    flex-grow: 0;
+                    max-width: 33.333333%;
+                    flex-basis: 33.333333%;
+                }
+                .MuiGrid-grid-md-5 {
+                    flex-grow: 0;
+                    max-width: 41.666667%;
+                    flex-basis: 41.666667%;
+                }
+                .MuiGrid-grid-md-6 {
+                    flex-grow: 0;
+                    max-width: 50%;
+                    flex-basis: 50%;
+                }
+                .MuiGrid-grid-md-7 {
+                    flex-grow: 0;
+                    max-width: 58.333333%;
+                    flex-basis: 58.333333%;
+                }
+                .MuiGrid-grid-md-8 {
+                    flex-grow: 0;
+                    max-width: 66.666667%;
+                    flex-basis: 66.666667%;
+                }
+                .MuiGrid-grid-md-9 {
+                    flex-grow: 0;
+                    max-width: 75%;
+                    flex-basis: 75%;
+                }
+                .MuiGrid-grid-md-10 {
+                    flex-grow: 0;
+                    max-width: 83.333333%;
+                    flex-basis: 83.333333%;
+                }
+                .MuiGrid-grid-md-11 {
+                    flex-grow: 0;
+                    max-width: 91.666667%;
+                    flex-basis: 91.666667%;
+                }
+                .MuiGrid-grid-md-12 {
+                    flex-grow: 0;
+                    max-width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+            @media (min-width: 1280px) {
+                .MuiGrid-grid-lg-auto {
+                    flex-grow: 0;
+                    max-width: none;
+                    flex-basis: auto;
+                }
+                .MuiGrid-grid-lg-true {
+                    flex-grow: 1;
+                    max-width: 100%;
+                    flex-basis: 0;
+                }
+                .MuiGrid-grid-lg-1 {
+                    flex-grow: 0;
+                    max-width: 8.333333%;
+                    flex-basis: 8.333333%;
+                }
+                .MuiGrid-grid-lg-2 {
+                    flex-grow: 0;
+                    max-width: 16.666667%;
+                    flex-basis: 16.666667%;
+                }
+                .MuiGrid-grid-lg-3 {
+                    flex-grow: 0;
+                    max-width: 25%;
+                    flex-basis: 25%;
+                }
+                .MuiGrid-grid-lg-4 {
+                    flex-grow: 0;
+                    max-width: 33.333333%;
+                    flex-basis: 33.333333%;
+                }
+                .MuiGrid-grid-lg-5 {
+                    flex-grow: 0;
+                    max-width: 41.666667%;
+                    flex-basis: 41.666667%;
+                }
+                .MuiGrid-grid-lg-6 {
+                    flex-grow: 0;
+                    max-width: 50%;
+                    flex-basis: 50%;
+                }
+                .MuiGrid-grid-lg-7 {
+                    flex-grow: 0;
+                    max-width: 58.333333%;
+                    flex-basis: 58.333333%;
+                }
+                .MuiGrid-grid-lg-8 {
+                    flex-grow: 0;
+                    max-width: 66.666667%;
+                    flex-basis: 66.666667%;
+                }
+                .MuiGrid-grid-lg-9 {
+                    flex-grow: 0;
+                    max-width: 75%;
+                    flex-basis: 75%;
+                }
+                .MuiGrid-grid-lg-10 {
+                    flex-grow: 0;
+                    max-width: 83.333333%;
+                    flex-basis: 83.333333%;
+                }
+                .MuiGrid-grid-lg-11 {
+                    flex-grow: 0;
+                    max-width: 91.666667%;
+                    flex-basis: 91.666667%;
+                }
+                .MuiGrid-grid-lg-12 {
+                    flex-grow: 0;
+                    max-width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+            @media (min-width: 1920px) {
+                .MuiGrid-grid-xl-auto {
+                    flex-grow: 0;
+                    max-width: none;
+                    flex-basis: auto;
+                }
+                .MuiGrid-grid-xl-true {
+                    flex-grow: 1;
+                    max-width: 100%;
+                    flex-basis: 0;
+                }
+                .MuiGrid-grid-xl-1 {
+                    flex-grow: 0;
+                    max-width: 8.333333%;
+                    flex-basis: 8.333333%;
+                }
+                .MuiGrid-grid-xl-2 {
+                    flex-grow: 0;
+                    max-width: 16.666667%;
+                    flex-basis: 16.666667%;
+                }
+                .MuiGrid-grid-xl-3 {
+                    flex-grow: 0;
+                    max-width: 25%;
+                    flex-basis: 25%;
+                }
+                .MuiGrid-grid-xl-4 {
+                    flex-grow: 0;
+                    max-width: 33.333333%;
+                    flex-basis: 33.333333%;
+                }
+                .MuiGrid-grid-xl-5 {
+                    flex-grow: 0;
+                    max-width: 41.666667%;
+                    flex-basis: 41.666667%;
+                }
+                .MuiGrid-grid-xl-6 {
+                    flex-grow: 0;
+                    max-width: 50%;
+                    flex-basis: 50%;
+                }
+                .MuiGrid-grid-xl-7 {
+                    flex-grow: 0;
+                    max-width: 58.333333%;
+                    flex-basis: 58.333333%;
+                }
+                .MuiGrid-grid-xl-8 {
+                    flex-grow: 0;
+                    max-width: 66.666667%;
+                    flex-basis: 66.666667%;
+                }
+                .MuiGrid-grid-xl-9 {
+                    flex-grow: 0;
+                    max-width: 75%;
+                    flex-basis: 75%;
+                }
+                .MuiGrid-grid-xl-10 {
+                    flex-grow: 0;
+                    max-width: 83.333333%;
+                    flex-basis: 83.333333%;
+                }
+                .MuiGrid-grid-xl-11 {
+                    flex-grow: 0;
+                    max-width: 91.666667%;
+                    flex-basis: 91.666667%;
+                }
+                .MuiGrid-grid-xl-12 {
+                    flex-grow: 0;
+                    max-width: 100%;
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+        <style data-jss="" data-meta="MuiInputBase">
+            @keyframes mui-auto-fill {
+            }
+            @keyframes mui-auto-fill-cancel {
+            }
+            .MuiInputBase-root {
+                color: rgba(0, 0, 0, 0.87);
+                cursor: text;
+                display: inline-flex;
+                position: relative;
+                font-size: 1rem;
+                box-sizing: border-box;
+                align-items: center;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.1876em;
+                letter-spacing: 0.00938em;
+            }
+            .MuiInputBase-root.Mui-disabled {
+                color: rgba(0, 0, 0, 0.38);
+                cursor: default;
+            }
+            .MuiInputBase-multiline {
+                padding: 6px 0 7px;
+            }
+            .MuiInputBase-multiline.MuiInputBase-marginDense {
+                padding-top: 3px;
+            }
+            .MuiInputBase-fullWidth {
+                width: 100%;
+            }
+            .MuiInputBase-input {
+                font: inherit;
+                color: currentColor;
+                width: 100%;
+                border: 0;
+                height: 1.1876em;
+                margin: 0;
+                display: block;
+                padding: 6px 0 7px;
+                min-width: 0;
+                background: none;
+                box-sizing: content-box;
+                animation-name: mui-auto-fill-cancel;
+                letter-spacing: inherit;
+                animation-duration: 10ms;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .MuiInputBase-input::-webkit-input-placeholder {
+                color: currentColor;
+                opacity: 0.42;
+                transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            }
+            .MuiInputBase-input::-moz-placeholder {
+                color: currentColor;
+                opacity: 0.42;
+                transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            }
+            .MuiInputBase-input:-ms-input-placeholder {
+                color: currentColor;
+                opacity: 0.42;
+                transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            }
+            .MuiInputBase-input::-ms-input-placeholder {
+                color: currentColor;
+                opacity: 0.42;
+                transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+            }
+            .MuiInputBase-input:focus {
+                outline: 0;
+            }
+            .MuiInputBase-input:invalid {
+                box-shadow: none;
+            }
+            .MuiInputBase-input::-webkit-search-decoration {
+                -webkit-appearance: none;
+            }
+            .MuiInputBase-input.Mui-disabled {
+                opacity: 1;
+            }
+            .MuiInputBase-input:-webkit-autofill {
+                animation-name: mui-auto-fill;
+                animation-duration: 5000s;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input::-webkit-input-placeholder {
+                opacity: 0 !important;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input::-moz-placeholder {
+                opacity: 0 !important;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input:-ms-input-placeholder {
+                opacity: 0 !important;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input::-ms-input-placeholder {
+                opacity: 0 !important;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input:focus::-webkit-input-placeholder {
+                opacity: 0.42;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input:focus::-moz-placeholder {
+                opacity: 0.42;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input:focus:-ms-input-placeholder {
+                opacity: 0.42;
+            }
+            label[data-shrink='false']
+                + .MuiInputBase-formControl
+                .MuiInputBase-input:focus::-ms-input-placeholder {
+                opacity: 0.42;
+            }
+            .MuiInputBase-inputMarginDense {
+                padding-top: 3px;
+            }
+            .MuiInputBase-inputMultiline {
+                height: auto;
+                resize: none;
+                padding: 0;
+            }
+            .MuiInputBase-inputTypeSearch {
+                -moz-appearance: textfield;
+                -webkit-appearance: textfield;
+            }
+        </style>
+        <style data-jss="" data-meta="PrivateNotchedOutline">
+            .jss4 {
+                top: -5px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0;
+                padding: 0 8px;
+                overflow: hidden;
+                position: absolute;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: inherit;
+                pointer-events: none;
+            }
+            .jss5 {
+                padding: 0;
+                text-align: left;
+                transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+                line-height: 11px;
+            }
+            .jss6 {
+                width: auto;
+                height: 11px;
+                display: block;
+                padding: 0;
+                font-size: 0.75em;
+                max-width: 0.01px;
+                text-align: left;
+                transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+                visibility: hidden;
+            }
+            .jss6 > span {
+                display: inline-block;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .jss7 {
+                max-width: 1000px;
+                transition: max-width 100ms cubic-bezier(0, 0, 0.2, 1) 50ms;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiOutlinedInput">
+            .MuiOutlinedInput-root {
+                position: relative;
+                border-radius: 4px;
+            }
+            .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+                border-color: rgba(0, 0, 0, 0.87);
+            }
+            @media (hover: none) {
+                .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+                    border-color: rgba(0, 0, 0, 0.23);
+                }
+            }
+            .MuiOutlinedInput-root.Mui-focused
+                .MuiOutlinedInput-notchedOutline {
+                border-color: #3f51b5;
+                border-width: 2px;
+            }
+            .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+                border-color: #f44336;
+            }
+            .MuiOutlinedInput-root.Mui-disabled
+                .MuiOutlinedInput-notchedOutline {
+                border-color: rgba(0, 0, 0, 0.26);
+            }
+            .MuiOutlinedInput-colorSecondary.Mui-focused
+                .MuiOutlinedInput-notchedOutline {
+                border-color: #f50057;
+            }
+            .MuiOutlinedInput-adornedStart {
+                padding-left: 14px;
+            }
+            .MuiOutlinedInput-adornedEnd {
+                padding-right: 14px;
+            }
+            .MuiOutlinedInput-multiline {
+                padding: 18.5px 14px;
+            }
+            .MuiOutlinedInput-multiline.MuiOutlinedInput-marginDense {
+                padding-top: 10.5px;
+                padding-bottom: 10.5px;
+            }
+            .MuiOutlinedInput-notchedOutline {
+                border-color: rgba(0, 0, 0, 0.23);
+            }
+            .MuiOutlinedInput-input {
+                padding: 18.5px 14px;
+            }
+            .MuiOutlinedInput-input:-webkit-autofill {
+                border-radius: inherit;
+            }
+            .MuiOutlinedInput-inputMarginDense {
+                padding-top: 10.5px;
+                padding-bottom: 10.5px;
+            }
+            .MuiOutlinedInput-inputMultiline {
+                padding: 0;
+            }
+            .MuiOutlinedInput-inputAdornedStart {
+                padding-left: 0;
+            }
+            .MuiOutlinedInput-inputAdornedEnd {
+                padding-right: 0;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiFormLabel">
+            .MuiFormLabel-root {
+                color: rgba(0, 0, 0, 0.54);
+                padding: 0;
+                font-size: 1rem;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1;
+                letter-spacing: 0.00938em;
+            }
+            .MuiFormLabel-root.Mui-focused {
+                color: #3f51b5;
+            }
+            .MuiFormLabel-root.Mui-disabled {
+                color: rgba(0, 0, 0, 0.38);
+            }
+            .MuiFormLabel-root.Mui-error {
+                color: #f44336;
+            }
+            .MuiFormLabel-colorSecondary.Mui-focused {
+                color: #f50057;
+            }
+            .MuiFormLabel-asterisk.Mui-error {
+                color: #f44336;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiInputLabel">
+            .MuiInputLabel-root {
+                display: block;
+                transform-origin: top left;
+            }
+            .MuiInputLabel-formControl {
+                top: 0;
+                left: 0;
+                position: absolute;
+                transform: translate(0, 24px) scale(1);
+            }
+            .MuiInputLabel-marginDense {
+                transform: translate(0, 21px) scale(1);
+            }
+            .MuiInputLabel-shrink {
+                transform: translate(0, 1.5px) scale(0.75);
+                transform-origin: top left;
+            }
+            .MuiInputLabel-animated {
+                transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+                    transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+            }
+            .MuiInputLabel-filled {
+                z-index: 1;
+                transform: translate(12px, 20px) scale(1);
+                pointer-events: none;
+            }
+            .MuiInputLabel-filled.MuiInputLabel-marginDense {
+                transform: translate(12px, 17px) scale(1);
+            }
+            .MuiInputLabel-filled.MuiInputLabel-shrink {
+                transform: translate(12px, 10px) scale(0.75);
+            }
+            .MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense {
+                transform: translate(12px, 7px) scale(0.75);
+            }
+            .MuiInputLabel-outlined {
+                z-index: 1;
+                transform: translate(14px, 20px) scale(1);
+                pointer-events: none;
+            }
+            .MuiInputLabel-outlined.MuiInputLabel-marginDense {
+                transform: translate(14px, 12px) scale(1);
+            }
+            .MuiInputLabel-outlined.MuiInputLabel-shrink {
+                transform: translate(14px, -6px) scale(0.75);
+            }
+        </style>
+        <style data-jss="" data-meta="MuiFormControl">
+            .MuiFormControl-root {
+                border: 0;
+                margin: 0;
+                display: inline-flex;
+                padding: 0;
+                position: relative;
+                min-width: 0;
+                flex-direction: column;
+                vertical-align: top;
+            }
+            .MuiFormControl-marginNormal {
+                margin-top: 16px;
+                margin-bottom: 8px;
+            }
+            .MuiFormControl-marginDense {
+                margin-top: 8px;
+                margin-bottom: 4px;
+            }
+            .MuiFormControl-fullWidth {
+                width: 100%;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiSvgIcon">
+            .MuiSvgIcon-root {
+                fill: currentColor;
+                width: 1em;
+                height: 1em;
+                display: inline-block;
+                font-size: 1.5rem;
+                transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                flex-shrink: 0;
+                user-select: none;
+            }
+            .MuiSvgIcon-colorPrimary {
+                color: #3f51b5;
+            }
+            .MuiSvgIcon-colorSecondary {
+                color: #f50057;
+            }
+            .MuiSvgIcon-colorAction {
+                color: rgba(0, 0, 0, 0.54);
+            }
+            .MuiSvgIcon-colorError {
+                color: #f44336;
+            }
+            .MuiSvgIcon-colorDisabled {
+                color: rgba(0, 0, 0, 0.26);
+            }
+            .MuiSvgIcon-fontSizeInherit {
+                font-size: inherit;
+            }
+            .MuiSvgIcon-fontSizeSmall {
+                font-size: 1.25rem;
+            }
+            .MuiSvgIcon-fontSizeLarge {
+                font-size: 2.1875rem;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTextField"></style>
+        <style data-jss="" data-meta="MuiButtonBase">
+            .MuiButtonBase-root {
+                color: inherit;
+                border: 0;
+                cursor: pointer;
+                margin: 0;
+                display: inline-flex;
+                outline: 0;
+                padding: 0;
+                position: relative;
+                align-items: center;
+                user-select: none;
+                border-radius: 0;
+                vertical-align: middle;
+                -moz-appearance: none;
+                justify-content: center;
+                text-decoration: none;
+                background-color: transparent;
+                -webkit-appearance: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .MuiButtonBase-root::-moz-focus-inner {
+                border-style: none;
+            }
+            .MuiButtonBase-root.Mui-disabled {
+                cursor: default;
+                pointer-events: none;
+            }
+            @media print {
+                .MuiButtonBase-root {
+                    color-adjust: exact;
+                }
+            }
+        </style>
+        <style data-jss="" data-meta="MuiButton">
+            .MuiButton-root {
+                color: rgba(0, 0, 0, 0.87);
+                padding: 6px 16px;
+                font-size: 0.875rem;
+                min-width: 64px;
+                box-sizing: border-box;
+                transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+                        0ms,
+                    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+                    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 500;
+                line-height: 1.75;
+                border-radius: 4px;
+                letter-spacing: 0.02857em;
+                text-transform: uppercase;
+            }
+            .MuiButton-root:hover {
+                text-decoration: none;
+                background-color: rgba(0, 0, 0, 0.04);
+            }
+            .MuiButton-root.Mui-disabled {
+                color: rgba(0, 0, 0, 0.26);
+            }
+            @media (hover: none) {
+                .MuiButton-root:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiButton-root:hover.Mui-disabled {
+                background-color: transparent;
+            }
+            .MuiButton-label {
+                width: 100%;
+                display: inherit;
+                align-items: inherit;
+                justify-content: inherit;
+            }
+            .MuiButton-text {
+                padding: 6px 8px;
+            }
+            .MuiButton-textPrimary {
+                color: #3f51b5;
+            }
+            .MuiButton-textPrimary:hover {
+                background-color: rgba(63, 81, 181, 0.04);
+            }
+            @media (hover: none) {
+                .MuiButton-textPrimary:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiButton-textSecondary {
+                color: #f50057;
+            }
+            .MuiButton-textSecondary:hover {
+                background-color: rgba(245, 0, 87, 0.04);
+            }
+            @media (hover: none) {
+                .MuiButton-textSecondary:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiButton-outlined {
+                border: 1px solid rgba(0, 0, 0, 0.23);
+                padding: 5px 15px;
+            }
+            .MuiButton-outlined.Mui-disabled {
+                border: 1px solid rgba(0, 0, 0, 0.12);
+            }
+            .MuiButton-outlinedPrimary {
+                color: #3f51b5;
+                border: 1px solid rgba(63, 81, 181, 0.5);
+            }
+            .MuiButton-outlinedPrimary:hover {
+                border: 1px solid #3f51b5;
+                background-color: rgba(63, 81, 181, 0.04);
+            }
+            @media (hover: none) {
+                .MuiButton-outlinedPrimary:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiButton-outlinedSecondary {
+                color: #f50057;
+                border: 1px solid rgba(245, 0, 87, 0.5);
+            }
+            .MuiButton-outlinedSecondary:hover {
+                border: 1px solid #f50057;
+                background-color: rgba(245, 0, 87, 0.04);
+            }
+            .MuiButton-outlinedSecondary.Mui-disabled {
+                border: 1px solid rgba(0, 0, 0, 0.26);
+            }
+            @media (hover: none) {
+                .MuiButton-outlinedSecondary:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiButton-contained {
+                color: rgba(0, 0, 0, 0.87);
+                box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+                    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+                background-color: #e0e0e0;
+            }
+            .MuiButton-contained:hover {
+                box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                background-color: #d5d5d5;
+            }
+            .MuiButton-contained.Mui-focusVisible {
+                box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+                    0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+            }
+            .MuiButton-contained:active {
+                box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                    0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+            }
+            .MuiButton-contained.Mui-disabled {
+                color: rgba(0, 0, 0, 0.26);
+                box-shadow: none;
+                background-color: rgba(0, 0, 0, 0.12);
+            }
+            @media (hover: none) {
+                .MuiButton-contained:hover {
+                    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+                        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+                        0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+                    background-color: #e0e0e0;
+                }
+            }
+            .MuiButton-contained:hover.Mui-disabled {
+                background-color: rgba(0, 0, 0, 0.12);
+            }
+            .MuiButton-containedPrimary {
+                color: #fff;
+                background-color: #3f51b5;
+            }
+            .MuiButton-containedPrimary:hover {
+                background-color: #303f9f;
+            }
+            @media (hover: none) {
+                .MuiButton-containedPrimary:hover {
+                    background-color: #3f51b5;
+                }
+            }
+            .MuiButton-containedSecondary {
+                color: #fff;
+                background-color: #f50057;
+            }
+            .MuiButton-containedSecondary:hover {
+                background-color: #c51162;
+            }
+            @media (hover: none) {
+                .MuiButton-containedSecondary:hover {
+                    background-color: #f50057;
+                }
+            }
+            .MuiButton-disableElevation {
+                box-shadow: none;
+            }
+            .MuiButton-disableElevation:hover {
+                box-shadow: none;
+            }
+            .MuiButton-disableElevation.Mui-focusVisible {
+                box-shadow: none;
+            }
+            .MuiButton-disableElevation:active {
+                box-shadow: none;
+            }
+            .MuiButton-disableElevation.Mui-disabled {
+                box-shadow: none;
+            }
+            .MuiButton-colorInherit {
+                color: inherit;
+                border-color: currentColor;
+            }
+            .MuiButton-textSizeSmall {
+                padding: 4px 5px;
+                font-size: 0.8125rem;
+            }
+            .MuiButton-textSizeLarge {
+                padding: 8px 11px;
+                font-size: 0.9375rem;
+            }
+            .MuiButton-outlinedSizeSmall {
+                padding: 3px 9px;
+                font-size: 0.8125rem;
+            }
+            .MuiButton-outlinedSizeLarge {
+                padding: 7px 21px;
+                font-size: 0.9375rem;
+            }
+            .MuiButton-containedSizeSmall {
+                padding: 4px 10px;
+                font-size: 0.8125rem;
+            }
+            .MuiButton-containedSizeLarge {
+                padding: 8px 22px;
+                font-size: 0.9375rem;
+            }
+            .MuiButton-fullWidth {
+                width: 100%;
+            }
+            .MuiButton-startIcon {
+                display: inherit;
+                margin-left: -4px;
+                margin-right: 8px;
+            }
+            .MuiButton-startIcon.MuiButton-iconSizeSmall {
+                margin-left: -2px;
+            }
+            .MuiButton-endIcon {
+                display: inherit;
+                margin-left: 8px;
+                margin-right: -4px;
+            }
+            .MuiButton-endIcon.MuiButton-iconSizeSmall {
+                margin-right: -2px;
+            }
+            .MuiButton-iconSizeSmall > *:first-child {
+                font-size: 18px;
+            }
+            .MuiButton-iconSizeMedium > *:first-child {
+                font-size: 20px;
+            }
+            .MuiButton-iconSizeLarge > *:first-child {
+                font-size: 22px;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiIconButton">
+            .MuiIconButton-root {
+                flex: 0 0 auto;
+                color: rgba(0, 0, 0, 0.54);
+                padding: 12px;
+                overflow: visible;
+                font-size: 1.5rem;
+                text-align: center;
+                transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1)
+                    0ms;
+                border-radius: 50%;
+            }
+            .MuiIconButton-root:hover {
+                background-color: rgba(0, 0, 0, 0.04);
+            }
+            .MuiIconButton-root.Mui-disabled {
+                color: rgba(0, 0, 0, 0.26);
+                background-color: transparent;
+            }
+            @media (hover: none) {
+                .MuiIconButton-root:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiIconButton-edgeStart {
+                margin-left: -12px;
+            }
+            .MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+                margin-left: -3px;
+            }
+            .MuiIconButton-edgeEnd {
+                margin-right: -12px;
+            }
+            .MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+                margin-right: -3px;
+            }
+            .MuiIconButton-colorInherit {
+                color: inherit;
+            }
+            .MuiIconButton-colorPrimary {
+                color: #3f51b5;
+            }
+            .MuiIconButton-colorPrimary:hover {
+                background-color: rgba(63, 81, 181, 0.04);
+            }
+            @media (hover: none) {
+                .MuiIconButton-colorPrimary:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiIconButton-colorSecondary {
+                color: #f50057;
+            }
+            .MuiIconButton-colorSecondary:hover {
+                background-color: rgba(245, 0, 87, 0.04);
+            }
+            @media (hover: none) {
+                .MuiIconButton-colorSecondary:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiIconButton-sizeSmall {
+                padding: 3px;
+                font-size: 1.125rem;
+            }
+            .MuiIconButton-label {
+                width: 100%;
+                display: flex;
+                align-items: inherit;
+                justify-content: inherit;
+            }
+        </style>
+        <style data-jss="" data-meta="PrivateSwitchBase">
+            .jss10 {
+                padding: 9px;
+            }
+            .jss13 {
+                top: 0;
+                left: 0;
+                width: 100%;
+                cursor: inherit;
+                height: 100%;
+                margin: 0;
+                opacity: 0;
+                padding: 0;
+                z-index: 1;
+                position: absolute;
+            }
+        </style>
+        <style data-jss="" data-meta="PrivateRadioButtonIcon">
+            .jss14 {
+                display: flex;
+                position: relative;
+            }
+            .jss14.jss16 .jss15 {
+                transform: scale(1);
+                transition: transform 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+            }
+            .jss15 {
+                left: 0;
+                position: absolute;
+                transform: scale(0);
+                transition: transform 150ms cubic-bezier(0.4, 0, 1, 1) 0ms;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiRadio">
+            .MuiRadio-root {
+                color: rgba(0, 0, 0, 0.54);
+            }
+            .MuiRadio-colorPrimary.Mui-checked {
+                color: #3f51b5;
+            }
+            .MuiRadio-colorPrimary.Mui-disabled {
+                color: rgba(0, 0, 0, 0.26);
+            }
+            .MuiRadio-colorPrimary.Mui-checked:hover {
+                background-color: rgba(63, 81, 181, 0.04);
+            }
+            @media (hover: none) {
+                .MuiRadio-colorPrimary.Mui-checked:hover {
+                    background-color: transparent;
+                }
+            }
+            .MuiRadio-colorSecondary.Mui-checked {
+                color: #f50057;
+            }
+            .MuiRadio-colorSecondary.Mui-disabled {
+                color: rgba(0, 0, 0, 0.26);
+            }
+            .MuiRadio-colorSecondary.Mui-checked:hover {
+                background-color: rgba(245, 0, 87, 0.04);
+            }
+            @media (hover: none) {
+                .MuiRadio-colorSecondary.Mui-checked:hover {
+                    background-color: transparent;
+                }
+            }
+        </style>
+        <style data-jss="" data-meta="MuiFormGroup">
+            .MuiFormGroup-root {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+            }
+            .MuiFormGroup-row {
+                flex-direction: row;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiFormControlLabel">
+            .MuiFormControlLabel-root {
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                margin-left: -11px;
+                margin-right: 16px;
+                vertical-align: middle;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .MuiFormControlLabel-root.Mui-disabled {
+                cursor: default;
+            }
+            .MuiFormControlLabel-labelPlacementStart {
+                margin-left: 16px;
+                margin-right: -11px;
+                flex-direction: row-reverse;
+            }
+            .MuiFormControlLabel-labelPlacementTop {
+                margin-left: 16px;
+                flex-direction: column-reverse;
+            }
+            .MuiFormControlLabel-labelPlacementBottom {
+                margin-left: 16px;
+                flex-direction: column;
+            }
+            .MuiFormControlLabel-label.Mui-disabled {
+                color: rgba(0, 0, 0, 0.38);
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTable">
+            .MuiTable-root {
+                width: 100%;
+                display: table;
+                border-spacing: 0;
+                border-collapse: collapse;
+            }
+            .MuiTable-root caption {
+                color: rgba(0, 0, 0, 0.54);
+                padding: 16px;
+                font-size: 0.875rem;
+                text-align: left;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.43;
+                caption-side: bottom;
+                letter-spacing: 0.01071em;
+            }
+            .MuiTable-stickyHeader {
+                border-collapse: separate;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTableBody">
+            .MuiTableBody-root {
+                display: table-row-group;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTableCell">
+            .MuiTableCell-root {
+                display: table-cell;
+                padding: 16px;
+                font-size: 0.875rem;
+                text-align: left;
+                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+                font-weight: 400;
+                line-height: 1.43;
+                border-bottom: 1px solid rgba(224, 224, 224, 1);
+                letter-spacing: 0.01071em;
+                vertical-align: inherit;
+            }
+            .MuiTableCell-head {
+                color: rgba(0, 0, 0, 0.87);
+                font-weight: 500;
+                line-height: 1.5rem;
+            }
+            .MuiTableCell-body {
+                color: rgba(0, 0, 0, 0.87);
+            }
+            .MuiTableCell-footer {
+                color: rgba(0, 0, 0, 0.54);
+                font-size: 0.75rem;
+                line-height: 1.3125rem;
+            }
+            .MuiTableCell-sizeSmall {
+                padding: 6px 24px 6px 16px;
+            }
+            .MuiTableCell-sizeSmall:last-child {
+                padding-right: 16px;
+            }
+            .MuiTableCell-sizeSmall.MuiTableCell-paddingCheckbox {
+                width: 24px;
+                padding: 0 12px 0 16px;
+            }
+            .MuiTableCell-sizeSmall.MuiTableCell-paddingCheckbox:last-child {
+                padding-left: 12px;
+                padding-right: 16px;
+            }
+            .MuiTableCell-sizeSmall.MuiTableCell-paddingCheckbox > * {
+                padding: 0;
+            }
+            .MuiTableCell-paddingCheckbox {
+                width: 48px;
+                padding: 0 0 0 4px;
+            }
+            .MuiTableCell-paddingCheckbox:last-child {
+                padding-left: 0;
+                padding-right: 4px;
+            }
+            .MuiTableCell-paddingNone {
+                padding: 0;
+            }
+            .MuiTableCell-paddingNone:last-child {
+                padding: 0;
+            }
+            .MuiTableCell-alignLeft {
+                text-align: left;
+            }
+            .MuiTableCell-alignCenter {
+                text-align: center;
+            }
+            .MuiTableCell-alignRight {
+                text-align: right;
+                flex-direction: row-reverse;
+            }
+            .MuiTableCell-alignJustify {
+                text-align: justify;
+            }
+            .MuiTableCell-stickyHeader {
+                top: 0;
+                left: 0;
+                z-index: 2;
+                position: sticky;
+                background-color: #fafafa;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTableContainer">
+            .MuiTableContainer-root {
+                width: 100%;
+                overflow-x: auto;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTableHead">
+            .MuiTableHead-root {
+                display: table-header-group;
+            }
+        </style>
+        <style data-jss="" data-meta="MuiTableRow">
+            .MuiTableRow-root {
+                color: inherit;
+                display: table-row;
+                outline: 0;
+                vertical-align: middle;
+            }
+            .MuiTableRow-root.MuiTableRow-hover:hover {
+                background-color: rgba(0, 0, 0, 0.04);
+            }
+            .MuiTableRow-root.Mui-selected,
+            .MuiTableRow-root.Mui-selected:hover {
+                background-color: rgba(245, 0, 87, 0.08);
+            }
+        </style>
+        <style data-jss="" data-meta="MuiDivider">
+            .MuiDivider-root {
+                border: none;
+                height: 1px;
+                margin: 0;
+                flex-shrink: 0;
+                background-color: rgba(0, 0, 0, 0.12);
+            }
+            .MuiDivider-absolute {
+                left: 0;
+                width: 100%;
+                bottom: 0;
+                position: absolute;
+            }
+            .MuiDivider-inset {
+                margin-left: 72px;
+            }
+            .MuiDivider-light {
+                background-color: rgba(0, 0, 0, 0.08);
+            }
+            .MuiDivider-middle {
+                margin-left: 16px;
+                margin-right: 16px;
+            }
+            .MuiDivider-vertical {
+                width: 1px;
+                height: 100%;
+            }
+            .MuiDivider-flexItem {
+                height: auto;
+                align-self: stretch;
+            }
+        </style>
     </head>
     <body>
-        <div id="root"></div>
+        <div id="root">
+            <div class="MuiBox-root jss1">
+                <h2 class="MuiTypography-root MuiTypography-h2">
+                    Automated Term Extraction Demonstrater
+                </h2>
+                <span class="MuiTypography-root MuiTypography-caption"
+                    >Web app to demonstrate term extraction algorithms, using
+                    PyATE as backend (<a
+                        class="
+                            MuiTypography-root
+                            MuiLink-root MuiLink-underlineHover
+                            MuiTypography-colorPrimary
+                        "
+                        href="https://github.com/kevinlu1248/pyate"
+                        >https://github.com/kevinlu1248/pyate</a
+                    >). When text is entered into the input, the list of
+                    predicted terms as well as their "termhoods" will be listed.
+                    The termhood is a value correlated with the probability of
+                    each phrase being a term, that is, it is a value denoting
+                    how much the phrase looks like a term.</span
+                >
+                <div class="MuiBox-root jss2"></div>
+                <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+                >
+                    <div
+                        class="
+                            MuiGrid-root
+                            MuiGrid-item
+                            MuiGrid-grid-xs-12
+                            MuiGrid-grid-md-4
+                        "
+                    >
+                        <h5
+                            class="
+                                MuiTypography-root
+                                MuiTypography-h5
+                                MuiTypography-gutterBottom
+                            "
+                        >
+                            Your text:
+                        </h5>
+                        <div class="MuiBox-root jss3"></div>
+                        <div
+                            class="
+                                MuiFormControl-root
+                                MuiTextField-root
+                                MuiFormControl-fullWidth
+                            "
+                        >
+                            <label
+                                class="
+                                    MuiFormLabel-root
+                                    MuiInputLabel-root
+                                    MuiInputLabel-formControl
+                                    MuiInputLabel-animated
+                                    MuiInputLabel-shrink
+                                    MuiInputLabel-outlined
+                                    MuiFormLabel-filled
+                                "
+                                data-shrink="true"
+                                for="outlined-multiline-static"
+                                id="outlined-multiline-static-label"
+                                >Your text to be analyzed by PyATE</label
+                            >
+                            <div
+                                class="
+                                    MuiInputBase-root
+                                    MuiOutlinedInput-root
+                                    MuiInputBase-fullWidth
+                                    MuiInputBase-formControl
+                                    MuiInputBase-multiline
+                                    MuiOutlinedInput-multiline
+                                "
+                            >
+                                <textarea
+                                    aria-invalid="false"
+                                    autofocus=""
+                                    id="outlined-multiline-static"
+                                    rows="10"
+                                    class="
+                                        MuiInputBase-input
+                                        MuiOutlinedInput-input
+                                        MuiInputBase-inputMultiline
+                                        MuiOutlinedInput-inputMultiline
+                                    "
+                                >
+My name is ComboBasic. I am a term extraction algorithm.</textarea
+                                >
+                                <fieldset
+                                    aria-hidden="true"
+                                    class="jss4 MuiOutlinedInput-notchedOutline"
+                                >
+                                    <legend class="jss6 jss7">
+                                        <span
+                                            >Your text to be analyzed by
+                                            PyATE</span
+                                        >
+                                    </legend>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="MuiBox-root jss8"></div>
+                    </div>
+                    <div
+                        class="
+                            MuiGrid-root
+                            MuiGrid-item
+                            MuiGrid-grid-xs-12
+                            MuiGrid-grid-md-4
+                        "
+                    >
+                        <h5 class="MuiTypography-root MuiTypography-h5">
+                            Your algorithm:
+                        </h5>
+                        <div class="MuiBox-root jss9"></div>
+                        <fieldset class="MuiFormControl-root">
+                            <div
+                                class="MuiFormGroup-root"
+                                role="radiogroup"
+                                aria-label="position"
+                            >
+                                <label class="MuiFormControlLabel-root"
+                                    ><span
+                                        class="
+                                            MuiButtonBase-root
+                                            MuiIconButton-root
+                                            jss10
+                                            MuiRadio-root MuiRadio-colorPrimary
+                                            jss11
+                                            Mui-checked
+                                            MuiIconButton-colorPrimary
+                                        "
+                                        aria-disabled="false"
+                                        ><span class="MuiIconButton-label"
+                                            ><input
+                                                type="radio"
+                                                checked=""
+                                                class="jss13"
+                                                name="position"
+                                                value="combo_basic" />
+                                            <div class="jss14 jss16">
+                                                <svg
+                                                    class="MuiSvgIcon-root"
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                                    ></path></svg
+                                                ><svg
+                                                    class="
+                                                        MuiSvgIcon-root
+                                                        jss15
+                                                    "
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                                                    ></path>
+                                                </svg></div></span></span
+                                    ><span
+                                        class="
+                                            MuiTypography-root
+                                            MuiFormControlLabel-label
+                                            MuiTypography-body1
+                                        "
+                                        >ComboBasic</span
+                                    ></label
+                                ><label class="MuiFormControlLabel-root"
+                                    ><span
+                                        class="
+                                            MuiButtonBase-root
+                                            MuiIconButton-root
+                                            jss10
+                                            MuiRadio-root MuiRadio-colorPrimary
+                                            MuiIconButton-colorPrimary
+                                        "
+                                        aria-disabled="false"
+                                        ><span class="MuiIconButton-label"
+                                            ><input
+                                                type="radio"
+                                                class="jss13"
+                                                name="position"
+                                                value="basic" />
+                                            <div class="jss14">
+                                                <svg
+                                                    class="MuiSvgIcon-root"
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                                    ></path></svg
+                                                ><svg
+                                                    class="
+                                                        MuiSvgIcon-root
+                                                        jss15
+                                                    "
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                                                    ></path>
+                                                </svg></div></span></span
+                                    ><span
+                                        class="
+                                            MuiTypography-root
+                                            MuiFormControlLabel-label
+                                            MuiTypography-body1
+                                        "
+                                        >Basic</span
+                                    ></label
+                                ><label class="MuiFormControlLabel-root"
+                                    ><span
+                                        class="
+                                            MuiButtonBase-root
+                                            MuiIconButton-root
+                                            jss10
+                                            MuiRadio-root MuiRadio-colorPrimary
+                                            MuiIconButton-colorPrimary
+                                        "
+                                        aria-disabled="false"
+                                        ><span class="MuiIconButton-label"
+                                            ><input
+                                                type="radio"
+                                                class="jss13"
+                                                name="position"
+                                                value="cvalues" />
+                                            <div class="jss14">
+                                                <svg
+                                                    class="MuiSvgIcon-root"
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                                    ></path></svg
+                                                ><svg
+                                                    class="
+                                                        MuiSvgIcon-root
+                                                        jss15
+                                                    "
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                                                    ></path>
+                                                </svg></div></span></span
+                                    ><span
+                                        class="
+                                            MuiTypography-root
+                                            MuiFormControlLabel-label
+                                            MuiTypography-body1
+                                        "
+                                        >C-Values</span
+                                    ></label
+                                ><label class="MuiFormControlLabel-root"
+                                    ><span
+                                        class="
+                                            MuiButtonBase-root
+                                            MuiIconButton-root
+                                            jss10
+                                            MuiRadio-root MuiRadio-colorPrimary
+                                            MuiIconButton-colorPrimary
+                                        "
+                                        aria-disabled="false"
+                                        ><span class="MuiIconButton-label"
+                                            ><input
+                                                type="radio"
+                                                class="jss13"
+                                                name="position"
+                                                value="term_extractor" />
+                                            <div class="jss14">
+                                                <svg
+                                                    class="MuiSvgIcon-root"
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                                    ></path></svg
+                                                ><svg
+                                                    class="
+                                                        MuiSvgIcon-root
+                                                        jss15
+                                                    "
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                                                    ></path>
+                                                </svg></div></span></span
+                                    ><span
+                                        class="
+                                            MuiTypography-root
+                                            MuiFormControlLabel-label
+                                            MuiTypography-body1
+                                        "
+                                        >TermExtractor</span
+                                    ></label
+                                ><label class="MuiFormControlLabel-root"
+                                    ><span
+                                        class="
+                                            MuiButtonBase-root
+                                            MuiIconButton-root
+                                            jss10
+                                            MuiRadio-root MuiRadio-colorPrimary
+                                            MuiIconButton-colorPrimary
+                                        "
+                                        aria-disabled="false"
+                                        ><span class="MuiIconButton-label"
+                                            ><input
+                                                type="radio"
+                                                class="jss13"
+                                                name="position"
+                                                value="weirdness" />
+                                            <div class="jss14">
+                                                <svg
+                                                    class="MuiSvgIcon-root"
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                                                    ></path></svg
+                                                ><svg
+                                                    class="
+                                                        MuiSvgIcon-root
+                                                        jss15
+                                                    "
+                                                    focusable="false"
+                                                    viewBox="0 0 24 24"
+                                                    aria-hidden="true"
+                                                >
+                                                    <path
+                                                        d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                                                    ></path>
+                                                </svg></div></span></span
+                                    ><span
+                                        class="
+                                            MuiTypography-root
+                                            MuiFormControlLabel-label
+                                            MuiTypography-body1
+                                        "
+                                        >Weirdness</span
+                                    ></label
+                                >
+                            </div>
+                        </fieldset>
+                        <div class="MuiBox-root jss17"></div>
+                        <span class="MuiTypography-root MuiTypography-caption"
+                            >ComboBasic is an extension of the Basic algorithm,
+                            designed by<!-- -->
+                            <a
+                                class="
+                                    MuiTypography-root
+                                    MuiLink-root MuiLink-underlineHover
+                                    MuiTypography-colorPrimary
+                                "
+                                href="https://arxiv.org/abs/1611.07804"
+                                >Astrakhantsev (2016)</a
+                            >, which calculates the termhood of a candidate term
+                            <i>t</i> by a weighted average of the number of
+                            times <i>t</i> contains another candidate, the
+                            number of times another term contains <i>t</i>, and
+                            the length of <i>t</i> in characters times the log
+                            of the frequency of <i>t</i>.<!-- -->
+                            <a
+                                class="
+                                    MuiTypography-root
+                                    MuiLink-root MuiLink-underlineHover
+                                    MuiTypography-colorPrimary
+                                "
+                                href="https://kevinlu1248.github.io/pyate/algorithms.html#combobasic"
+                                >More info</a
+                            ></span
+                        >
+                        <div class="MuiBox-root jss18"></div>
+                        <h6 class="MuiTypography-root MuiTypography-subtitle1">
+                            <button
+                                class="
+                                    MuiButtonBase-root
+                                    MuiButton-root
+                                    MuiButton-text
+                                    MuiButton-textPrimary
+                                    Mui-disabled Mui-disabled
+                                "
+                                tabindex="-1"
+                                type="button"
+                                disabled=""
+                            >
+                                <span class="MuiButton-label"
+                                    >Advanced options</span
+                                >
+                            </button>
+                        </h6>
+                        <div class="MuiBox-root jss19"></div>
+                    </div>
+                    <div
+                        class="
+                            MuiGrid-root
+                            MuiGrid-item
+                            MuiGrid-grid-xs-12
+                            MuiGrid-grid-md-4
+                        "
+                    >
+                        <h5 class="MuiTypography-root MuiTypography-h5">
+                            Your terms:
+                        </h5>
+                        <div class="MuiBox-root jss20">
+                            <div
+                                class="MuiTableContainer-root"
+                                style="height: 500px"
+                            >
+                                <table
+                                    class="MuiTable-root MuiTable-stickyHeader"
+                                    aria-label="simple table"
+                                >
+                                    <thead class="MuiTableHead-root">
+                                        <tr
+                                            class="
+                                                MuiTableRow-root
+                                                MuiTableRow-head
+                                            "
+                                        >
+                                            <th
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-head
+                                                    MuiTableCell-sizeSmall
+                                                    MuiTableCell-stickyHeader
+                                                "
+                                                scope="col"
+                                            >
+                                                Term name
+                                            </th>
+                                            <th
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-head
+                                                    MuiTableCell-alignRight
+                                                    MuiTableCell-sizeSmall
+                                                    MuiTableCell-stickyHeader
+                                                "
+                                                scope="col"
+                                            >
+                                                Termhood
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="MuiTableBody-root">
+                                        <tr class="MuiTableRow-root">
+                                            <th
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-body
+                                                    MuiTableCell-sizeSmall
+                                                "
+                                                role="cell"
+                                                scope="row"
+                                            >
+                                                <span
+                                                    class="
+                                                        MuiTypography-root
+                                                        MuiTypography-colorInherit
+                                                    "
+                                                    >term extraction</span
+                                                >
+                                            </th>
+                                            <td
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-body
+                                                    MuiTableCell-alignRight
+                                                    MuiTableCell-sizeSmall
+                                                "
+                                            >
+                                                <span
+                                                    class="
+                                                        MuiTypography-root
+                                                        MuiTypography-colorInherit
+                                                    "
+                                                    >1.443</span
+                                                >
+                                            </td>
+                                        </tr>
+                                        <tr class="MuiTableRow-root">
+                                            <th
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-body
+                                                    MuiTableCell-sizeSmall
+                                                "
+                                                role="cell"
+                                                scope="row"
+                                            >
+                                                <span
+                                                    class="
+                                                        MuiTypography-root
+                                                        MuiTypography-colorInherit
+                                                    "
+                                                    >extraction algorithm</span
+                                                >
+                                            </th>
+                                            <td
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-body
+                                                    MuiTableCell-alignRight
+                                                    MuiTableCell-sizeSmall
+                                                "
+                                            >
+                                                <span
+                                                    class="
+                                                        MuiTypography-root
+                                                        MuiTypography-colorInherit
+                                                    "
+                                                    >1.443</span
+                                                >
+                                            </td>
+                                        </tr>
+                                        <tr class="MuiTableRow-root">
+                                            <th
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-body
+                                                    MuiTableCell-sizeSmall
+                                                "
+                                                role="cell"
+                                                scope="row"
+                                            >
+                                                <span
+                                                    class="
+                                                        MuiTypography-root
+                                                        MuiTypography-colorInherit
+                                                    "
+                                                    >term extraction
+                                                    algorithm</span
+                                                >
+                                            </th>
+                                            <td
+                                                class="
+                                                    MuiTableCell-root
+                                                    MuiTableCell-body
+                                                    MuiTableCell-alignRight
+                                                    MuiTableCell-sizeSmall
+                                                "
+                                            >
+                                                <span
+                                                    class="
+                                                        MuiTypography-root
+                                                        MuiTypography-colorInherit
+                                                    "
+                                                    >1.299</span
+                                                >
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="MuiBox-root jss21">
+                        <h3 class="MuiTypography-root MuiTypography-h3">
+                            <a
+                                class="
+                                    MuiTypography-root
+                                    MuiLink-root MuiLink-underlineHover
+                                    MuiTypography-colorPrimary
+                                "
+                                href="https://pypi.org/project/pyate/"
+                                ><svg
+                                    class="MuiSvgIcon-root"
+                                    focusable="false"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                                    ></path></svg></a
+                            >&nbsp;<a
+                                class="
+                                    MuiTypography-root
+                                    MuiLink-root MuiLink-underlineHover
+                                    MuiTypography-colorPrimary
+                                "
+                                href="https://github.com/kevinlu1248/pyate"
+                                ><svg
+                                    class="MuiSvgIcon-root"
+                                    focusable="false"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"
+                                    ></path></svg></a
+                            >&nbsp;<a
+                                class="
+                                    MuiTypography-root
+                                    MuiLink-root MuiLink-underlineHover
+                                    MuiTypography-colorPrimary
+                                "
+                                href="https://kevinlu1248.github.io/pyate/"
+                                ><svg
+                                    class="MuiSvgIcon-root"
+                                    focusable="false"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                                    ></path></svg
+                            ></a>
+                        </h3>
+                    </div>
+                </div>
+                <hr class="MuiDivider-root MuiDivider-middle" />
+                <div>
+                    <div class="MuiBox-root jss22">
+                        <span
+                            class="
+                                MuiTypography-root
+                                MuiTypography-caption
+                                MuiTypography-alignCenter
+                            "
+                            >If something is wrong, feel free to throw a Github
+                            issue or email me at&nbsp;<a
+                                class="
+                                    MuiTypography-root
+                                    MuiLink-root MuiLink-underlineHover
+                                    MuiTypography-colorPrimary
+                                "
+                                href="mailto:kevinlu1248@gmail.com"
+                                >kevinlu1248@gmail.com</a
+                            ></span
+                        >
+                    </div>
+                    <div class="MuiBox-root jss23">
+                        <span
+                            class="
+                                MuiTypography-root
+                                MuiTypography-caption
+                                MuiTypography-alignCenter
+                            "
+                            >Made by Kevin Lu | Copyright (C) 2021</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
         <script
             defer="defer"
-            src="./static/main.96385ce0efaa03baedc3.js"
+            src="./static/main.af6a9eff9745b550d1bc.js"
         ></script>
     </body>
 </html>
