@@ -1,8 +1,8 @@
 import * as React from 'react';
 const useState = React.useState;
 
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/styles';
+
 import Grid from '@material-ui/core/Grid';
 
 import Input from './input';
@@ -11,17 +11,20 @@ import Output from './output';
 
 interface Props {}
 
-interface EventTarget {
-    value: string;
-}
-
 interface Event {
     target: {
         value: any;
     };
 }
 
+const useStyles = makeStyles({
+    grid: {
+        marginTop: 18,
+    },
+});
+
 export default (props: Props) => {
+    const classes = useStyles();
     const [text, setText] = useState<string>(
         'My name is ComboBasic. I am a term extraction algorithm.'
     );
@@ -34,7 +37,7 @@ export default (props: Props) => {
     const [loadingCounter, setLoadingCounter] = useState<number>(0); // done loading when counter is at 0, adds one for every request sent and removes one for every request not sent
     const [timeout, setTimeoutState] = useState<any>(undefined);
 
-    function renderNewOutput(algo: string, text: string) {
+    const renderNewOutput = (algo: string, text: string): void => {
         setLoadingCounter(1);
         if (timeout) {
             clearTimeout(timeout);
@@ -44,9 +47,9 @@ export default (props: Props) => {
                 renderNewOutputRaw(algo, text);
             }, 800)
         );
-    }
+    };
 
-    function renderNewOutputRaw(algo: string, text: string) {
+    const renderNewOutputRaw = (algo: string, text: string): void => {
         console.log(`Sent! Current loadingCounter=${loadingCounter}`);
         fetch('/ate', {
             method: 'POST',
@@ -71,23 +74,23 @@ export default (props: Props) => {
             )
             .then((data) => {})
             .catch(console.error);
-    }
+    };
 
-    function handleInputChange(event: Event) {
+    const handleInputChange = (event: Event): void => {
         let newText = event.target.value;
         setText(newText);
         renderNewOutput(algo, newText);
-    }
+    };
 
-    function handleAlgoChange(event: Event) {
+    const handleAlgoChange = (event: Event): void => {
         let newAlgo = event.target.value;
         setAlgo(newAlgo);
         renderNewOutput(newAlgo, text);
-    }
+    };
 
     return (
         <>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} classes={{ container: classes.grid }}>
                 <Grid item xs={12} md={4}>
                     <Input handleInputChange={handleInputChange} />
                 </Grid>

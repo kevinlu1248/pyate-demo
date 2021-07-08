@@ -12,9 +12,9 @@ module.exports = {
     mode: 'development',
     entry: './src/index.tsx',
     output: {
-        // filename: './static/index.bundle.js',
         filename: './static/[name].[contenthash].js',
         path: path.resolve(__dirname, './server/build/'),
+        clean: true,
     },
     module: {
         rules: [

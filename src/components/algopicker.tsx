@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { makeStyles } from '@material-ui/styles';
 
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -10,7 +11,18 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+
+const useStyles = makeStyles({
+    title: {
+        marginBottom: 6,
+    },
+    formControl: {
+        marginBottom: 6,
+    },
+    typography: {
+        marginBottom: 18,
+    },
+});
 
 const ALGOS = [
     [
@@ -119,38 +131,47 @@ interface Props {
     ) => void;
 }
 
-export default (props: Props) => (
-    <>
-        <Typography variant="h5">Your algorithm:</Typography>
-        <Box mb={1} />
-        <FormControl component="fieldset">
-            <RadioGroup
-                aria-label="position"
-                name="position"
-                defaultValue="combo_basic"
-                onChange={props.handleAlgoChange}
+export default (props: Props) => {
+    const classes = useStyles();
+    return (
+        <>
+            <Typography variant="h5" classes={{ root: classes.title }}>
+                Your algorithm:
+            </Typography>
+            <FormControl
+                component="fieldset"
+                classes={{ root: classes.formControl }}
             >
-                {ALGOS.map((row) => (
-                    <FormControlLabel
-                        value={row[0]}
-                        control={<Radio color="primary" />}
-                        label={row[1]}
-                    />
-                ))}
-            </RadioGroup>
-        </FormControl>
-        <Box mb={1} />
-        {ALGOS.map((row) => {
-            if (props.algo == row[0]) {
-                return <Typography variant="caption">{row[2]}</Typography>;
-            }
-        })}
-        <Box mb={1} />
-        <Typography variant="subtitle1">
-            <Button color="primary" disabled>
-                Advanced options
-            </Button>
-        </Typography>
-        <Box mb={3} />
-    </>
-);
+                <RadioGroup
+                    aria-label="position"
+                    name="position"
+                    defaultValue="combo_basic"
+                    onChange={props.handleAlgoChange}
+                >
+                    {ALGOS.map((row) => (
+                        <FormControlLabel
+                            value={row[0]}
+                            control={<Radio color="primary" />}
+                            label={row[1]}
+                        />
+                    ))}
+                </RadioGroup>
+            </FormControl>
+            <Box />
+            {ALGOS.map((row) => {
+                if (props.algo == row[0]) {
+                    return <Typography variant="caption">{row[2]}</Typography>;
+                }
+            })}
+            <Box mb={1} />
+            <Typography
+                variant="subtitle1"
+                classes={{ root: classes.typography }}
+            >
+                <Button color="primary" disabled>
+                    Advanced options
+                </Button>
+            </Typography>
+        </>
+    );
+};
