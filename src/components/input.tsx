@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 
-import { useTheme, makeStyles } from '@material-ui/core/styles';
+import { useTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 interface Props {

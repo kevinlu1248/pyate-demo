@@ -22,9 +22,12 @@ const useStyles = makeStyles({
     typography: {
         marginBottom: 18,
     },
+    description: {
+        marginBottom: 6,
+    },
 });
 
-const ALGOS = [
+const ALGOS: Array<[string, string, JSX.Element]> = [
     [
         'combo_basic',
         'ComboBasic',
@@ -160,10 +163,17 @@ export default (props: Props) => {
             <Box />
             {ALGOS.map((row) => {
                 if (props.algo == row[0]) {
-                    return <Typography variant="caption">{row[2]}</Typography>;
+                    return (
+                        <Typography
+                            variant="caption"
+                            classes={{ root: classes.description }}
+                        >
+                            {row[2]}
+                        </Typography>
+                    );
                 }
             })}
-            <Box mb={1} />
+            <Box />
             <Typography
                 variant="subtitle1"
                 classes={{ root: classes.typography }}
